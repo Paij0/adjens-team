@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Absensi Siswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta http-equiv="refresh" content="5">
+</head>
+<body class="bg-gray-100">
+
+<nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-lg font-semibold">
+            <img src="hire-logo.png" alt="Hire Logo" class="h-8 inline mr-2">
+            Monitoring Absensi
+        </div>
+        <ul class="space-x-4">
+            <li class="inline-block">
+                <a href="#" class="text-white hover:underline">Home</a>
+            </li>
+            <li class="inline-block">
+                <a href="#" class="text-white hover:underline">About</a>
+            </li>
+            <li class="inline-block">
+                <a href="#" class="text-white hover:underline">Contact</a>
+            </li>
+            <li class="inline-block">
+                <a href="/camera" class="text-white hover:underline">Camera</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-semibold mb-6">Monitoring Absensi Siswa</h1>
+    <!-- <main class="container mx-auto my-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <h2 class="text-lg mb-4 text-white">Camera Masuk - Face Recognition</h2>
+                <img id="camera_masuk" class="mx-auto" src="{{ url_for('video_feed_masuk') }}" alt="Camera Masuk">
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <h2 class="text-lg mb-4 text-white">Camera Keluar - Face Recognition</h2>
+                <img id="camera_keluar" class="mx-auto" src="{{ url_for('video_feed_keluar') }}" alt="Camera Keluar">
+            </div>
+        </div>
+    </main> -->
+  
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <table class="w-full border">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="py-3 px-2 border">No</th>
+                    <th class="py-3 px-2 border">Nama</th>
+                    <th class="py-3 px-2 border">Status Kedatangan</th>
+                    <th class="py-3 px-2 border">Jam Kedatangan</th>
+                    <th class="py-3 px-2 border">Status Kepulangan</th>
+                    <th class="py-3 px-2 border">Jam Kepulangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                {% for key, data in absensi.items() %}
+                <tr class="bg-white">
+                    <td class="py-3 px-2 border">{{ loop.index }}</td>
+                    <td class="py-3 px-2 border">{{ key }}</td>
+                    <td class="py-3 px-2 border">{{ data["Status Kedatangan"] }}</td>
+                    <td class="py-3 px-2 border">{{ data["Waktu Masuk"] }}</td>
+                    <td class="py-3 px-2 border">{{ data["Status Kepulangan"] }}</td>
+                    <td class="py-3 px-2 border">{{ data["Waktu Keluar"] }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

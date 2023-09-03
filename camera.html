@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+ 
+<nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-lg font-semibold">
+            <img src="hire-logo.png" alt="Hire Logo" class="h-8 inline mr-2">
+            Monitoring Absensi
+        </div>
+        <ul class="space-x-4">
+            <li class="inline-block">
+                <a href="/" class="text-white hover:underline">Home</a>
+            </li>
+            <li class="inline-block">
+                <a href="#" class="text-white hover:underline">About</a>
+            </li>
+            <li class="inline-block">
+                <a href="#" class="text-white hover:underline">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container mx-auto p-6">
+    <main class="container mx-auto my-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <h2 class="text-lg mb-4 text-white">Camera Masuk - Face Recognition</h2>
+                <img id="camera_masuk" class="mx-auto" src="{{ url_for('video_feed_masuk') }}" alt="Camera Masuk">
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <h2 class="text-lg mb-4 text-white">Camera Keluar - Face Recognition</h2>
+                <img id="camera_keluar" class="mx-auto" src="{{ url_for('video_feed_keluar') }}" alt="Camera Keluar">
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
